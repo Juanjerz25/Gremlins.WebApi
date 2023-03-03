@@ -12,12 +12,12 @@ namespace Gremlins.WebApi.DataAccess.Repositories
     class PartidoRepository : IPartidoRepository
     {
         #region Fields
-        protected readonly GoalPredictorDbContext _context;
+        protected readonly GremlinsDbContext _context;
         #endregion
 
         #region Builders
 
-        public PartidoRepository(GoalPredictorDbContext context)
+        public PartidoRepository(GremlinsDbContext context)
         {
             _context = context;
         }

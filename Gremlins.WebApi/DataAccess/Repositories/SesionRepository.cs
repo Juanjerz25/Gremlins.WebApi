@@ -12,12 +12,12 @@ namespace Gremlins.WebApi.DataAccess.Repositories
     class SesionRepository : ISesionRepository
     {
         #region Fields
-        protected readonly GoalPredictorDbContext _context;
+        protected readonly GremlinsDbContext _context;
         #endregion
 
         #region Builders
 
-        public SesionRepository(GoalPredictorDbContext context)
+        public SesionRepository(GremlinsDbContext context)
         {
             _context = context;
         }

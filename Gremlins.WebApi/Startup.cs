@@ -40,7 +40,7 @@ namespace Gremlins.WebApi
             services.AddTransient<IWebsocketHandlerApplication, WebsocketHandlerApplication>();
             services.AddControllers();
 
-            services.AddDbContext<GoalPredictorDbContext>(options =>
+            services.AddDbContext<GremlinsDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("PruebaDigitalware")));
 
 
@@ -49,6 +49,7 @@ namespace Gremlins.WebApi
             services.AddTransient<IPartidoRepository, PartidoRepository>();
             services.AddTransient<IPaisRepository, PaisRepository>();
             services.AddTransient<ISesionRepository, SesionRepository>();
+            services.AddTransient<IClientesRepository, ClientesRepository>();
             #endregion
 
             #region DI Application
@@ -56,7 +57,7 @@ namespace Gremlins.WebApi
             services.AddTransient<IPartidoApplication, PartidoApplication>();
             services.AddTransient<IPaisApplication, PaisApplication>();
             services.AddTransient<ISesionApplication, SesionApplication>();
-            
+            services.AddTransient<IClientesApplication, ClientesAppplication>();
             #endregion
 
 

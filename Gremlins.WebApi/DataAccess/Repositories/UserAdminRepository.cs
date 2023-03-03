@@ -11,12 +11,12 @@ namespace Gremlins.WebApi.DataAccess.Repositories
     class UserAdminRepository: IUserAdminRepository
     {
         #region Fields
-        protected readonly GoalPredictorDbContext _context;
+        protected readonly GremlinsDbContext _context;
         #endregion
 
         #region Builders
 
-        public UserAdminRepository(GoalPredictorDbContext context)
+        public UserAdminRepository(GremlinsDbContext context)
         {
             _context = context;
         }

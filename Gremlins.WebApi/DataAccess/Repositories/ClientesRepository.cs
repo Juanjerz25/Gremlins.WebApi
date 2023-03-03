@@ -1,15 +1,12 @@
 ﻿using Gremlins.WebApi.DataAccess.Entities;
 using Gremlins.WebApi.DataAccess.Repositories.Contracts;
-using Gremlins.WebApi.Helpers;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 
 namespace Gremlins.WebApi.DataAccess.Repositories
 {
-    class PaisRepository : IPaisRepository
+    class ClientesRepository : IClientesRepository
     {
         #region Fields
         protected readonly GremlinsDbContext _context;
@@ -17,7 +14,7 @@ namespace Gremlins.WebApi.DataAccess.Repositories
 
         #region Builders
 
-        public PaisRepository(GremlinsDbContext context)
+        public ClientesRepository(GremlinsDbContext context)
         {
             _context = context;
         }
@@ -26,9 +23,9 @@ namespace Gremlins.WebApi.DataAccess.Repositories
 
         #region Methods
 
-        public IEnumerable<Pais> List()
+        public IEnumerable<Clientes> List()
         {
-            return _context.Set<Pais>().AsNoTracking().OrderBy(x=> x.Nombre).ToList();
+            return _context.Set<Clientes>().AsNoTracking().OrderBy(x=> x.NombreCompleto).ToList();
         }
 
         #endregion
