@@ -25,7 +25,7 @@ namespace Gremlins.WebApi.Controllers
         #region Methods
 
         /// <summary>
-        /// Consultar los clientes
+        /// Consultar los clientes Totales 
         /// </summary>
         /// <returns></returns>
         [HttpGet]
