@@ -1,11 +1,8 @@
 ﻿using Gremlins.WebApi.Application.Contracts;
 using Gremlins.WebApi.DTO.Clientes;
 using Gremlins.WebApi.DTO.Response;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Gremlins.WebApi.Controllers

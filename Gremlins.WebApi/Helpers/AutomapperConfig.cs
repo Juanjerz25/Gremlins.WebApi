@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Gremlins.WebApi.DataAccess.Entities;
+using Gremlins.WebApi.DTO.Clientes;
 using Gremlins.WebApi.DTO.Pais;
 using Gremlins.WebApi.DTO.Partido;
 using Gremlins.WebApi.DTO.Sesion;
@@ -21,6 +22,7 @@ namespace Gremlins.WebApi.Helpers
             CreateMap<PaisDto, Pais>().ReverseMap();
             CreateMap<SesionDto, Sesion>().ReverseMap();
             CreateMap<SesionUsuarioDto, SesionUsuario>().ReverseMap();
+            CreateMap<ClientesDto, Clientes>().ReverseMap();
         }
 
     }
