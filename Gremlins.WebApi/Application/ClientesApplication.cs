@@ -10,7 +10,7 @@ using System.Linq;
 
 namespace Gremlins.WebApi.Application
 {
-    public class ClientesAppplication : IClientesApplication
+    public class ClientesApplication : IClientesApplication
     {
         #region Fields
         private readonly IClientesRepository _clientesRepository;
@@ -19,7 +19,7 @@ namespace Gremlins.WebApi.Application
         #region Builders
 
 
-        public ClientesAppplication(IClientesRepository clientesRepository, IMapper mapper)
+        public ClientesApplication(IClientesRepository clientesRepository, IMapper mapper)
         {
             _clientesRepository = clientesRepository;
             this.mapper = mapper;

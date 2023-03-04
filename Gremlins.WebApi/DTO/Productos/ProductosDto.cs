@@ -16,7 +16,7 @@ namespace Gremlins.WebApi.DTO.Productos
         public decimal? Precio { get; set; }
         public bool? Habilitado { get; set; }
         public int? IdDistribuidor { get; set; }
-
+        [JsonIgnore]
         public DistribuidoresDto IdDistribuidorNavigation { get; set; }
         [JsonIgnore]
         public ICollection<VentasDetalleDto> VentasDetalles { get; set; }

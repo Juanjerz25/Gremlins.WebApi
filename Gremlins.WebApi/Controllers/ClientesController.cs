@@ -38,7 +38,7 @@ namespace Gremlins.WebApi.Controllers
             });
         }
         /// <summary>
-        /// Consultar los clientes Totales 
+        /// Consultar los clientes por Documento 
         /// </summary>
         /// <returns></returns>
         [HttpGet]
@@ -50,6 +50,11 @@ namespace Gremlins.WebApi.Controllers
                 return _clientesApplication.GetClientesForDocument(documento);
             });
         }
+        /// <summary>
+        /// Actualizar un cliente
+        /// </summary>
+        /// <param name="clienteActualizado"></param>
+        /// <returns></returns>
         [HttpPut("")]
         public async Task<ResponseQuery<ClientesDto>> ActualizarProducto( [FromBody] ClientesDto clienteActualizado)
         {

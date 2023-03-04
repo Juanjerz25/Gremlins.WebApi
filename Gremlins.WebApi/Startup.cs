@@ -46,11 +46,13 @@ namespace Gremlins.WebApi
             #region DI DataAccess
             services.AddTransient<IVentaRepository, VentaRepository>();
             services.AddTransient<IClientesRepository, ClientesRepository>();
+            services.AddTransient<IProductosRepository, ProductosRepository>();
             #endregion
 
             #region DI Application
             services.AddTransient<IVentasApplication, VentasApplication>();
-            services.AddTransient<IClientesApplication, ClientesAppplication>();
+            services.AddTransient<IClientesApplication, ClientesApplication>();
+            services.AddTransient<IProductosApplication, ProductosAppplication>();
             #endregion
 
 
@@ -87,7 +89,7 @@ namespace Gremlins.WebApi
             .AllowAnyHeader());
 
             //app.UseHttpsRedirection();
-           // app.UseWebSockets();
+            // app.UseWebSockets();
             app.UseRouting();
 
             //app.UseAuthorization();

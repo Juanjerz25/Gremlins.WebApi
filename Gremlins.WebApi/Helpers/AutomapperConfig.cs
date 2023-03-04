@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Gremlins.WebApi.DataAccess.Entities;
 using Gremlins.WebApi.DTO.Clientes;
+using Gremlins.WebApi.DTO.Productos;
 using Gremlins.WebApi.DTO.Ventas;
 
 namespace Gremlins.WebApi.Helpers
@@ -11,6 +12,7 @@ namespace Gremlins.WebApi.Helpers
         public AutomapperConfig()
         {
             CreateMap<ClientesDto, Clientes>().ReverseMap();
+            CreateMap<ProductosDto, Productos>().ReverseMap();
             CreateMap<VentasDto, Ventas>().ReverseMap();
         }
 
