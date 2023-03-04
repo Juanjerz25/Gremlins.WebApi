@@ -3,6 +3,7 @@ using Gremlins.WebApi.DataAccess.Entities;
 using Gremlins.WebApi.DTO.Clientes;
 using Gremlins.WebApi.DTO.Distribuidores;
 using Gremlins.WebApi.DTO.Productos;
+using Gremlins.WebApi.DTO.Usuarios;
 using Gremlins.WebApi.DTO.Ventas;
 
 namespace Gremlins.WebApi.Helpers
@@ -17,6 +18,7 @@ namespace Gremlins.WebApi.Helpers
             CreateMap<DistribuidoresDto, Distribuidores>().ReverseMap();
             CreateMap<VentasDto, Ventas>().ReverseMap();
             CreateMap<VentasDetalleDto, VentasDetalles>().ReverseMap();
+            CreateMap<UsuariosDto, Usuarios>().ReverseMap();
         }
 
     }
