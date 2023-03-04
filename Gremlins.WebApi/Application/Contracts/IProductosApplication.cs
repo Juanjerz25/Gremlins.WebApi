@@ -10,6 +10,6 @@ namespace Gremlins.WebApi.Application.Contracts
 
         ResponseQuery<ProductosDto> GetProductosForId(int idProducto);
 
-        ResponseQuery<ProductosDto> UpdateProductos(ProductosDto clientesDtoUpdate);
+        ResponseQuery<ProductosDto> UpdateProductos(ProductosDto productosDtoUpdate);
     }
 }

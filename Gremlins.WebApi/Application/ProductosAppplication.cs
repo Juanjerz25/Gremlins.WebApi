@@ -52,8 +52,8 @@ namespace Gremlins.WebApi.Application
                 var productosList = _productosRepository.Find(c => c.IdProducto == idProducto);
 
 
-                var clienteDto = mapper.Map<ProductosDto>(productosList);
-                response.Result = clienteDto;
+                var productoDto = mapper.Map<ProductosDto>(productosList);
+                response.Result = productoDto;
 
             }
             catch (Exception ex)
@@ -70,8 +70,8 @@ namespace Gremlins.WebApi.Application
             try
             {
                 
-                var clienteUpdate= mapper.Map<Productos>(productosDtoUpdate);
-                _productosRepository.Update(clienteUpdate);
+                var productoUpdate= mapper.Map<Productos>(productosDtoUpdate);
+                _productosRepository.Update(productoUpdate);
                 
                 response.Result = productosDtoUpdate;
 
