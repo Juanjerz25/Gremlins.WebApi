@@ -7,5 +7,9 @@ namespace Gremlins.WebApi.Application.Contracts
     public interface IClientesApplication
     {
         ResponseQuery<List<ClientesDto>> GetClientes();
+
+        ResponseQuery<ClientesDto> GetClientesForDocument(int Documento);
+
+        ResponseQuery<ClientesDto> UpdateCliente(ClientesDto clientesDtoUpdate);
     }
 }
