@@ -25,16 +25,16 @@ namespace Gremlins.WebApi.DataAccess.Repositories
 
 
         #region Methods
-        public Ventas Find(Expression<Func<Ventas, bool>> expression)
+        public Ventas FindVentas(Expression<Func<Ventas, bool>> expression)
         {
             return _context.Set<Ventas>().AsNoTracking().FirstOrDefault(expression);
         }
 
-        public IEnumerable<Ventas> List(Expression<Func<Ventas, bool>> expression)
+        public IEnumerable<Ventas> ListVentas(Expression<Func<Ventas, bool>> expression)
         {
             return _context.Set<Ventas>().Include(s => s.VentasDetalles).Include(s=> s.IdClienteNavigation).AsNoTracking().Where(expression).ToList();
         }
-        public IEnumerable<Ventas> List()
+        public IEnumerable<Ventas> ListVentas()
         {
             return _context.Set<Ventas>().Include(s=> s.VentasDetalles).Include(s => s.IdClienteNavigation).AsNoTracking().ToList();
         }

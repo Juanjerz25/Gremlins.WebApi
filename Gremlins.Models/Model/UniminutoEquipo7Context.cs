@@ -135,6 +135,14 @@ namespace Gremlins.Models.Model
             {
                 entity.HasKey(e => e.IdUsuario);
 
+                entity.Property(e => e.Contrasena)
+                    .HasMaxLength(256)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Correo)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
                 entity.Property(e => e.Nombre)
                     .HasMaxLength(50)
                     .IsUnicode(false);
@@ -151,6 +159,8 @@ namespace Gremlins.Models.Model
 
                 entity.Property(e => e.Fecha).HasColumnType("date");
 
+                entity.Property(e => e.Habilitado).HasDefaultValueSql("((1))");
+
                 entity.Property(e => e.ValorTotal).HasColumnType("numeric(18, 2)");
 
                 entity.HasOne(d => d.IdClienteNavigation)
@@ -166,6 +176,8 @@ namespace Gremlins.Models.Model
                 entity.HasIndex(e => e.IdVenta, "IX_VentasDetalles");
 
                 entity.Property(e => e.Cantidad).HasColumnType("numeric(18, 0)");
+
+                entity.Property(e => e.Habilitado).HasDefaultValueSql("((1))");
 
                 entity.Property(e => e.Precio).HasColumnType("numeric(18, 0)");
 

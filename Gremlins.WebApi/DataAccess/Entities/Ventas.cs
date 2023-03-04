@@ -16,6 +16,7 @@ namespace Gremlins.WebApi.DataAccess.Entities
         public DateTime? Fecha { get; set; }
         public int? IdCliente { get; set; }
         public decimal? ValorTotal { get; set; }
+        public bool? Habilitado { get; set; }
 
         public virtual Clientes IdClienteNavigation { get; set; }
         public virtual ICollection<VentasDetalles> VentasDetalles { get; set; }

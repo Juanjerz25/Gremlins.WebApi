@@ -58,7 +58,7 @@ namespace Gremlins.WebApi.Application
             ResponseQuery<List<VentasDto>> response = new ResponseQuery<List<VentasDto>>();
             try
             {
-                var sesionList = _ventasRepository.List();
+                var sesionList = _ventasRepository.ListVentas();
 
 
                 var sesionDtoList = mapper.Map<List<VentasDto>>(sesionList);

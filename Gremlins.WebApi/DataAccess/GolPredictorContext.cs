@@ -134,6 +134,14 @@ namespace Gremlins.WebApi.DataAccess
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
+                entity.Property(e => e.Contrasena)
+                    .HasMaxLength(256)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Correo)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
                 entity.HasOne(d => d.IdRolNavigation)
                     .WithMany(p => p.Usuarios)
                     .HasForeignKey(d => d.IdRol)
@@ -147,6 +155,7 @@ namespace Gremlins.WebApi.DataAccess
                 entity.Property(e => e.Fecha).HasColumnType("date");
 
                 entity.Property(e => e.ValorTotal).HasColumnType("numeric(18, 2)");
+                entity.Property(e => e.Habilitado).HasDefaultValueSql("((1))");
 
                 entity.HasOne(d => d.IdClienteNavigation)
                     .WithMany(p => p.Ventas)
@@ -163,6 +172,7 @@ namespace Gremlins.WebApi.DataAccess
                 entity.Property(e => e.Cantidad).HasColumnType("numeric(18, 0)");
 
                 entity.Property(e => e.Precio).HasColumnType("numeric(18, 0)");
+                entity.Property(e => e.Habilitado).HasDefaultValueSql("((1))");
 
                 entity.HasOne(d => d.IdProductoNavigation)
                     .WithMany(p => p.VentasDetalles)

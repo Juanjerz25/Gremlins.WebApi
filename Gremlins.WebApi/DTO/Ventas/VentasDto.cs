@@ -2,6 +2,7 @@
 using Gremlins.WebApi.DTO.Clientes;
 using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace Gremlins.WebApi.DTO.Ventas
 {
@@ -11,8 +12,9 @@ namespace Gremlins.WebApi.DTO.Ventas
         public DateTime? Fecha { get; set; }
         public int? IdCliente { get; set; }
         public decimal? ValorTotal { get; set; }
-
+        public bool? Habilitado { get; set; }
+        [JsonIgnore]
         public ClientesDto IdClienteNavigation { get; set; }
-        public ICollection<VentasDetalles> VentasDetalles { get; set; }
+        public ICollection<VentasDetalleDto> VentasDetalles { get; set; }
     }
 }

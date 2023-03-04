@@ -7,12 +7,19 @@ using Gremlins.WebApi.DataAccess.Repositories.Contracts;
 using Gremlins.WebApi.Helpers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using System;
+using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Gremlins.WebApi
 {
@@ -39,15 +46,13 @@ namespace Gremlins.WebApi
             #region DI DataAccess
             services.AddTransient<IVentaRepository, VentaRepository>();
             services.AddTransient<IClientesRepository, ClientesRepository>();
-            services.AddTransient<IProductosRepository, ProductosRepository>();
-            services.AddTransient<IDistribuidoresRepository, DistribuidoresRepository>();
+            services.AddTransient<IUsuariosRepository, UsuariosRepository>();
             #endregion
 
             #region DI Application
             services.AddTransient<IVentasApplication, VentasApplication>();
             services.AddTransient<IClientesApplication, ClientesApplication>();
-            services.AddTransient<IProductosApplication, ProductosAppplication>();
-            services.AddTransient<IDistribuidoresApplication, DistribuidoresApplication>();
+            services.AddTransient<IUsuariosApplication, UsuariosApplication>();
             #endregion
 
 
@@ -84,7 +89,7 @@ namespace Gremlins.WebApi
             .AllowAnyHeader());
 
             //app.UseHttpsRedirection();
-            // app.UseWebSockets();
+           // app.UseWebSockets();
             app.UseRouting();
 
             //app.UseAuthorization();

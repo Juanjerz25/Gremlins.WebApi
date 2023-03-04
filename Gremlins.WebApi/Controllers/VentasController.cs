@@ -40,8 +40,8 @@ namespace Gremlins.WebApi.Controllers
         }
 
         [HttpGet]
-        [Route(nameof(VentasController.GetSesiones))]
-        public async Task<ResponseQuery<List<VentasDto>>> GetSesiones()
+        [Route(nameof(VentasController.GetVentas))]
+        public async Task<ResponseQuery<List<VentasDto>>> GetVentas()
         {
             return await Task.Run(() =>
             {

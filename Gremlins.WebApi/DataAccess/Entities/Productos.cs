@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Gremlins.WebApi.DataAccess.Entities
@@ -22,6 +23,7 @@ namespace Gremlins.WebApi.DataAccess.Entities
         public int? IdDistribuidor { get; set; }
 
         public virtual Distribuidores IdDistribuidorNavigation { get; set; }
+        [JsonIgnore]
         public virtual ICollection<VentasDetalles> VentasDetalles { get; set; }
     }
 }

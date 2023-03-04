@@ -16,6 +16,7 @@ namespace Gremlins.WebApi.Helpers
             CreateMap<ProductosDto, Productos>().ReverseMap();
             CreateMap<DistribuidoresDto, Distribuidores>().ReverseMap();
             CreateMap<VentasDto, Ventas>().ReverseMap();
+            CreateMap<VentasDetalleDto, VentasDetalles>().ReverseMap();
         }
 
     }

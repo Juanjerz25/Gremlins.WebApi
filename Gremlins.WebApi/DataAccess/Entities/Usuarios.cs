@@ -11,6 +11,8 @@ namespace Gremlins.WebApi.DataAccess.Entities
         public string Nombre { get; set; }
         public bool? Habilitado { get; set; }
         public int? IdRol { get; set; }
+        public string Correo { get; set; }
+        public string Contrasena { get; set; }
 
         public virtual Roles IdRolNavigation { get; set; }
     }

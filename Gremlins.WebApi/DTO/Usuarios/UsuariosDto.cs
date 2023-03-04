@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-
-#nullable disable
-
-namespace Gremlins.Models.Model
+﻿namespace Gremlins.WebApi.DTO.Usuarios
 {
-    public partial class Usuarios
+    public class UsuariosDto
     {
         public int IdUsuario { get; set; }
         public string Nombre { get; set; }
@@ -13,7 +8,10 @@ namespace Gremlins.Models.Model
         public int? IdRol { get; set; }
         public string Correo { get; set; }
         public string Contrasena { get; set; }
-
-        public virtual Roles IdRolNavigation { get; set; }
+    }
+    public class RequestLogin
+    {
+        public string Correo { get; set; }
+        public string Contrasena { get; set; }
     }
 }
