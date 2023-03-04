@@ -25,7 +25,7 @@ namespace Gremlins.WebApi.Controllers
         #region Methods
 
         /// <summary>
-        /// Consultar los clientes
+        /// Consultar los clientes Totales 
         /// </summary>
         /// <returns></returns>
         [HttpGet]
@@ -37,7 +37,27 @@ namespace Gremlins.WebApi.Controllers
                 return _clientesApplication.GetClientes();
             });
         }
-
+        /// <summary>
+        /// Consultar los clientes Totales 
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route(nameof(ClientesController.GetClientesForDocument))]
+        public async Task<ResponseQuery<ClientesDto>> GetClientesForDocument(int documento)
+        {
+            return await Task.Run(() =>
+            {
+                return _clientesApplication.GetClientesForDocument(documento);
+            });
+        }
+        [HttpPut("")]
+        public async Task<ResponseQuery<ClientesDto>> ActualizarProducto( [FromBody] ClientesDto clienteActualizado)
+        {
+            return await Task.Run(() =>
+            {
+                return _clientesApplication.UpdateCliente(clienteActualizado);
+            });
+        }
         #endregion
 
     }

@@ -1,8 +1,10 @@
 ﻿using Gremlins.WebApi.DataAccess.Entities;
 using Gremlins.WebApi.DataAccess.Repositories.Contracts;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 
 namespace Gremlins.WebApi.DataAccess.Repositories
 {
@@ -27,7 +29,15 @@ namespace Gremlins.WebApi.DataAccess.Repositories
         {
             return _context.Set<Clientes>().AsNoTracking().OrderBy(x=> x.NombreCompleto).ToList();
         }
-
+        public Clientes Find(Expression<Func<Clientes, bool>> expression)
+        {
+            return _context.Set<Clientes>().AsNoTracking().FirstOrDefault(expression);
+        }
+        public void Update(Clientes clientes)
+        {
+            _context.Clientes.Update(clientes);
+            _context.SaveChanges();
+        }
         #endregion
 
     }
