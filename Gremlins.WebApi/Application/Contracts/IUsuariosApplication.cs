@@ -7,6 +7,6 @@ namespace Gremlins.WebApi.Application.Contracts
 {
     public interface IUsuariosApplication
     {
-        public ResponseQuery<int> FindUsuario(RequestLogin requestLogin);
+        public ResponseQuery<UsuariosDto> FindUsuario(RequestLogin requestLogin);
     }
 }

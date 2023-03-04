@@ -31,7 +31,7 @@ namespace Gremlins.WebApi.Controllers
         /// <param name="requestLogin"></param>
         /// <returns></returns>
         [HttpPost("")]
-        public async Task<ResponseQuery<int>> FindUsuario( [FromBody] RequestLogin requestLogin)
+        public async Task<ResponseQuery<UsuariosDto>> FindUsuario( [FromBody] RequestLogin requestLogin)
         {
             return await Task.Run(() =>
             {
