@@ -1,8 +1,6 @@
 ﻿using Gremlins.WebApi.Application.Contracts;
-using Gremlins.WebApi.DTO.Partido;
 using Gremlins.WebApi.DTO.Response;
-using Gremlins.WebApi.DTO.Sesion;
-using Gremlins.WebApi.DTO.UserAdmin;
+using Gremlins.WebApi.DTO.Ventas;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -12,16 +10,16 @@ namespace Gremlins.WebApi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]    
-    public class SesionController : ControllerBase
+    public class VentasController : ControllerBase
     {
         #region Fields
-        private readonly ISesionApplication _sesionApplication;
+        private readonly IVentasApplication _sesionApplication;
 
         #endregion
 
         #region Builder
 
-        public SesionController(ISesionApplication sesionApplication)
+        public VentasController(IVentasApplication sesionApplication)
         {
             _sesionApplication = sesionApplication;
         }
@@ -32,22 +30,22 @@ namespace Gremlins.WebApi.Controllers
         #region Methods
 
         [HttpPost]
-        [Route(nameof(SesionController.ManageSesion))]
-        public async Task<ResponseQuery<int>> ManageSesion(SesionDto request)
+        [Route(nameof(VentasController.ManageSesion))]
+        public async Task<ResponseQuery<int>> ManageSesion(VentasDto request)
         {
-            return await Task.Run(() =>
+            return await Task.Run((System.Func<ResponseQuery<int>>)(() =>
             {
-                return _sesionApplication.ManageSesion(request);
-            });
+                return (ResponseQuery<int>)_sesionApplication.ManageVentas(request);
+            }));
         }
 
         [HttpGet]
-        [Route(nameof(SesionController.GetSesiones))]
-        public async Task<ResponseQuery<List<SesionDto>>> GetSesiones()
+        [Route(nameof(VentasController.GetSesiones))]
+        public async Task<ResponseQuery<List<VentasDto>>> GetSesiones()
         {
             return await Task.Run(() =>
             {
-                return _sesionApplication.GetSesiones();
+                return _sesionApplication.GetVentas();
             });
         }
 

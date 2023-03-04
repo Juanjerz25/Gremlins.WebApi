@@ -37,7 +37,6 @@ namespace Gremlins.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<IWebsocketHandlerApplication, WebsocketHandlerApplication>();
             services.AddControllers();
 
             services.AddDbContext<GremlinsDbContext>(options =>
@@ -45,18 +44,12 @@ namespace Gremlins.WebApi
 
 
             #region DI DataAccess
-            services.AddTransient<IUserAdminRepository, UserAdminRepository>();
-            services.AddTransient<IPartidoRepository, PartidoRepository>();
-            services.AddTransient<IPaisRepository, PaisRepository>();
-            services.AddTransient<ISesionRepository, SesionRepository>();
+            services.AddTransient<IVentaRepository, VentaRepository>();
             services.AddTransient<IClientesRepository, ClientesRepository>();
             #endregion
 
             #region DI Application
-            services.AddTransient<IUserAdminApplication, UserAdminApplication>();
-            services.AddTransient<IPartidoApplication, PartidoApplication>();
-            services.AddTransient<IPaisApplication, PaisApplication>();
-            services.AddTransient<ISesionApplication, SesionApplication>();
+            services.AddTransient<IVentasApplication, VentasApplication>();
             services.AddTransient<IClientesApplication, ClientesAppplication>();
             #endregion
 
@@ -94,7 +87,7 @@ namespace Gremlins.WebApi
             .AllowAnyHeader());
 
             //app.UseHttpsRedirection();
-            app.UseWebSockets();
+           // app.UseWebSockets();
             app.UseRouting();
 
             //app.UseAuthorization();
