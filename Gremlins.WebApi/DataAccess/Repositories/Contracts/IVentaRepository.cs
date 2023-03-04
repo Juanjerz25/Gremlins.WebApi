@@ -8,9 +8,11 @@ namespace Gremlins.WebApi.DataAccess.Repositories.Contracts
     internal interface IVentaRepository
     {
         Ventas FindVentas(Expression<Func<Ventas, bool>> expression);
-        void Insert(Ventas sesion);
+        void InsertVentaDetalle(VentasDetalles ventasDetalles);
+        void InsertVentas(Ventas sesion);
         IEnumerable<Ventas> ListVentas();
         IEnumerable<Ventas> ListVentas(Expression<Func<Ventas, bool>> expression);
-        void Update(Ventas sesion);
+        void UpdateVentaDetalle(VentasDetalles ventaDetalles);
+        void UpdateVentas(Ventas sesion);
     }
 }

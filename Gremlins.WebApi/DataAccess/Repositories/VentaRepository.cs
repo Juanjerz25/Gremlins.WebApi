@@ -36,19 +36,32 @@ namespace Gremlins.WebApi.DataAccess.Repositories
         }
         public IEnumerable<Ventas> ListVentas()
         {
-            return _context.Set<Ventas>().Include(s=> s.VentasDetalles).Include(s => s.IdClienteNavigation).AsNoTracking().ToList();
+            return _context.Set<Ventas>().Include(s => s.IdClienteNavigation).Include(s=> s.VentasDetalles).ThenInclude(s=> s.IdProductoNavigation).AsNoTracking().ToList();
         }
 
-        public void Insert(Ventas ventas)
+        public void InsertVentas(Ventas ventas)
         {
             _context.Ventas.Add(ventas);
             _context.SaveChanges();            
-        }
+        }       
 
-        public void Update(Ventas venta)
+        public void UpdateVentas(Ventas venta)
         {
             var originalVenta = _context.Ventas.FirstOrDefault(x => x.IdVenta == venta.IdVenta);
             FrammeworkTypeUtility.SetProperties(venta, originalVenta);
+            _context.SaveChanges();
+        }
+
+        public void InsertVentaDetalle(VentasDetalles ventasDetalles)
+        {
+            _context.VentasDetalles.Add(ventasDetalles);
+            _context.SaveChanges();
+        }
+
+        public void UpdateVentaDetalle(VentasDetalles ventaDetalles)
+        {
+            var originalVentaDetalle = _context.VentasDetalles.FirstOrDefault(x => x.IdDetalleVenta == ventaDetalles.IdDetalleVenta);
+            FrammeworkTypeUtility.SetProperties(ventaDetalles, originalVentaDetalle);
             _context.SaveChanges();
         }
         #endregion

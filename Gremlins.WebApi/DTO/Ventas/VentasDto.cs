@@ -13,7 +13,7 @@ namespace Gremlins.WebApi.DTO.Ventas
         public int? IdCliente { get; set; }
         public decimal? ValorTotal { get; set; }
         public bool? Habilitado { get; set; }
-        [JsonIgnore]
+       
         public ClientesDto IdClienteNavigation { get; set; }
         public ICollection<VentasDetalleDto> VentasDetalles { get; set; }
     }

@@ -30,12 +30,22 @@ namespace Gremlins.WebApi.Controllers
         #region Methods
 
         [HttpPost]
-        [Route(nameof(VentasController.ManageSesion))]
-        public async Task<ResponseQuery<int>> ManageSesion(VentasDto request)
+        [Route(nameof(VentasController.ManageVentas))]
+        public async Task<ResponseQuery<int>> ManageVentas(VentasDto request)
         {
             return await Task.Run((System.Func<ResponseQuery<int>>)(() =>
             {
                 return (ResponseQuery<int>)_sesionApplication.ManageVentas(request);
+            }));
+        }
+
+        [HttpPost]
+        [Route(nameof(VentasController.ManageVentasDetalles))]
+        public async Task<ResponseQuery<int>> ManageVentasDetalles(VentasDetalleDto request)
+        {
+            return await Task.Run((System.Func<ResponseQuery<int>>)(() =>
+            {
+                return (ResponseQuery<int>)_sesionApplication.ManageVentasDetalles(request);
             }));
         }
 
@@ -46,6 +56,16 @@ namespace Gremlins.WebApi.Controllers
             return await Task.Run(() =>
             {
                 return _sesionApplication.GetVentas();
+            });
+        }
+
+        [HttpGet]
+        [Route(nameof(VentasController.GetVentasDetalles))]
+        public async Task<ResponseQuery<List<VentasDetalleDto>>> GetVentasDetalles()
+        {
+            return await Task.Run(() =>
+            {
+                return _sesionApplication.GetVentasDetalles();
             });
         }
 

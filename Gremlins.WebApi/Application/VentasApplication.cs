@@ -30,21 +30,21 @@ namespace Gremlins.WebApi.Application
         #region Methods
 
 
-        public ResponseQuery<int> ManageVentas(VentasDto request)
+        public ResponseQuery<int> ManageVentasDetalles(VentasDetalleDto request)
         {
             ResponseQuery<int> response = new ResponseQuery<int>();
             try
             {
 
-                var sesion = mapper.Map<Ventas>(request);
+                var ventasDetalles = mapper.Map<VentasDetalles>(request);
 
-                if (sesion.IdVenta == 0)
+                if (ventasDetalles.IdVenta == 0)
                 {
-                    _ventasRepository.Insert(sesion);
+                    _ventasRepository.InsertVentaDetalle(ventasDetalles);
                 }
                 else
-                    _ventasRepository.Update(sesion);
-                response.Result = sesion.IdVenta;
+                    _ventasRepository.UpdateVentaDetalle(ventasDetalles);
+                response.Result = ventasDetalles.IdVenta;
 
             }
             catch (Exception ex)
@@ -53,12 +53,34 @@ namespace Gremlins.WebApi.Application
             }
             return response;
         }
+
+        public ResponseQuery<List<VentasDetalleDto>> GetVentasDetalles()
+        {
+            ResponseQuery<List<VentasDetalleDto>> response = new ResponseQuery<List<VentasDetalleDto>>();
+            try
+            {
+                var ventaDetallesList = _ventasRepository.ListVentas(x=> x.Habilitado.Value);
+
+
+                var sesionDtoList = mapper.Map<List<VentasDetalleDto>>(ventaDetallesList);
+
+                response.Result = sesionDtoList.ToList();
+
+            }
+            catch (Exception ex)
+            {
+                response.ResponseMessage("Error en el sistema", false, ex.Message);
+
+            }
+            return response;
+        }
+
         public ResponseQuery<List<VentasDto>> GetVentas()
         {
             ResponseQuery<List<VentasDto>> response = new ResponseQuery<List<VentasDto>>();
             try
             {
-                var sesionList = _ventasRepository.ListVentas();
+                var sesionList = _ventasRepository.ListVentas(x=> x.Habilitado.Value);
 
 
                 var sesionDtoList = mapper.Map<List<VentasDto>>(sesionList);
@@ -70,6 +92,30 @@ namespace Gremlins.WebApi.Application
             {
                 response.ResponseMessage("Error en el sistema", false, ex.Message);
 
+            }
+            return response;
+        }
+
+        public ResponseQuery<int> ManageVentas(VentasDto request)
+        {
+            ResponseQuery<int> response = new ResponseQuery<int>();
+            try
+            {
+
+                var sesion = mapper.Map<Ventas>(request);
+
+                if (sesion.IdVenta == 0)
+                {
+                    _ventasRepository.InsertVentas(sesion);
+                }
+                else
+                    _ventasRepository.UpdateVentas(sesion);
+                response.Result = sesion.IdVenta;
+
+            }
+            catch (Exception ex)
+            {
+                response.ResponseMessage("Error en el sistema", false, ex.Message);
             }
             return response;
         }

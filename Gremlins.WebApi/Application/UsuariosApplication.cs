@@ -29,9 +29,9 @@ namespace Gremlins.WebApi.Application
 
 
 
-        public ResponseQuery<int> FindUsuario(RequestLogin requestLogin)
+        public ResponseQuery<UsuariosDto> FindUsuario(RequestLogin requestLogin)
         {
-            ResponseQuery<int> response = new ResponseQuery<int>();
+            ResponseQuery<UsuariosDto> response = new ResponseQuery<UsuariosDto>();
             try
             {
                 var usuario = _usuariosRepository.Find(c => c.Correo == requestLogin.Correo && c.Contrasena == requestLogin.Contrasena);
@@ -39,9 +39,14 @@ namespace Gremlins.WebApi.Application
                 if(usuario == null)
                 {
                     response.ResponseMessage("Usuario y/o contraseña invalidos", false);
+                    response.Result = null;
+                }
+                else
+                {
+                    response.Result = mapper.Map<UsuariosDto>(usuario);
                 }
 
-                response.Result = usuario?.IdUsuario ?? 0;
+
 
             }
             catch (Exception ex)
