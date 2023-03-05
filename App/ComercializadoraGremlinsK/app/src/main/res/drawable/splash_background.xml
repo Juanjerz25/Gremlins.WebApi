@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list android:opacity="opaque"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@color/bluelight0"></item>
+
+    <item android:gravity="center"
+        android:width="300dp"
+        android:height="300dp">
+        <bitmap android:src="@drawable/splash"  ></bitmap>
+    </item>
+
+    <!--<item android:gravity="center_horizontal"
+        android:width="100dp"
+        android:height="100dp">
+        <animated-rotate android:drawable="@drawable/loading1" android:visible="true" android:pivotX="@integer/material_motion_duration_long_1" android:pivotY="@integer/material_motion_duration_long_1"></animated-rotate>
+    </item>-->
+
+</layer-list>

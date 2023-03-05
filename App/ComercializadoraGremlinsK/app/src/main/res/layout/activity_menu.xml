@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.MenuActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Inicio"
+                android:textColor="@color/bluedark4"
+                android:textSize="60sp"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="25dp">
+            </TextView>
+
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/btn_cerrar_sesion"
+                android:layout_marginLeft="150dp"
+                android:layout_marginTop="5dp"
+                android:drawableLeft="@drawable/ic_logout"
+                android:text="logout"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/white">
+            </Button>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:id="@+id/btn_ventas"
+                android:text="Ventas"
+                android:drawableLeft="@drawable/ic_ventas"
+                style="@style/MenuButton">
+            </Button>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:id="@+id/btn_clientes"
+                android:text="Clientes"
+                android:drawableLeft="@drawable/ic_clientes"
+                style="@style/MenuButton">
+            </Button>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:id="@+id/btn_distribuidores"
+                android:text="Distribuidores"
+                android:drawableLeft="@drawable/ic_distribuidores"
+                style="@style/MenuButton">
+            </Button>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:id="@+id/btn_productos"
+                android:text="Productos"
+                android:drawableLeft="@drawable/ic_productos"
+                style="@style/MenuButton">
+            </Button>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:id="@+id/btn_usuarios"
+                android:text="Usuarios"
+                android:drawableLeft="@drawable/ic_users"
+                style="@style/MenuButton">
+            </Button>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="55dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/lbl_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:text="User:"
+                android:textColor="@color/bluedark4"
+                android:textStyle="italic"
+                android:textSize="20sp"></TextView>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

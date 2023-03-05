@@ -1,0 +1,40 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.ComercializadoraGremlinsK" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+    <style name="LoginTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/gray1</item>
+        <item name="android:navigationBarColor">@color/gray1</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+        <item name="android:statusBarColor">@color/bluelight0</item>
+        <item name="android:navigationBarColor">@color/bluelight0</item>
+    </style>
+
+    <style name="MenuButton" parent="@style/Widget.AppCompat.Button.Colored">
+        <item name="android:layout_height">70dp</item>
+        <item name="android:layout_marginLeft">25dp</item>
+        <item name="android:layout_marginRight">25dp</item>
+        <item name="android:layout_marginTop">25dp</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:height">70dp</item>
+        <item name="android:paddingLeft">60dp</item>
+        <item name="android:paddingRight">60dp</item>
+        <item name="android:backgroundTint">@color/bluenormal3</item>
+    </style>
+</resources>
