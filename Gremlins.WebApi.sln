@@ -1,13 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.1.32407.343
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31229.75
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gremlins.WebApi", "Gremlins.WebApi\Gremlins.WebApi.csproj", "{A2423216-49B4-48D0-A52F-CABB0B11498E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Model", "Model", "{FDBDFAAF-55FB-4577-9F40-38DAD94CF9F6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gremlins.Models", "Gremlins.Models\Gremlins.Models.csproj", "{654A08A4-481A-48D1-9140-CDEA282B4C43}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{25FA36A2-D3B2-4A26-AB78-B48BAE75D36B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProjectGremlins", "TestProjectGremlins\TestProjectGremlins.csproj", "{DE4E7BDF-F7AF-45BC-9279-509320E6FD00}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,12 +27,17 @@ Global
 		{654A08A4-481A-48D1-9140-CDEA282B4C43}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{654A08A4-481A-48D1-9140-CDEA282B4C43}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{654A08A4-481A-48D1-9140-CDEA282B4C43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE4E7BDF-F7AF-45BC-9279-509320E6FD00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE4E7BDF-F7AF-45BC-9279-509320E6FD00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE4E7BDF-F7AF-45BC-9279-509320E6FD00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE4E7BDF-F7AF-45BC-9279-509320E6FD00}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{654A08A4-481A-48D1-9140-CDEA282B4C43} = {FDBDFAAF-55FB-4577-9F40-38DAD94CF9F6}
+		{DE4E7BDF-F7AF-45BC-9279-509320E6FD00} = {25FA36A2-D3B2-4A26-AB78-B48BAE75D36B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D2E3D6C1-1D79-4FC9-9696-03EFC8C78A91}

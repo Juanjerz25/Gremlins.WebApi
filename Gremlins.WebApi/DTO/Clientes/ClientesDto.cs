@@ -1,4 +1,8 @@
-﻿namespace Gremlins.WebApi.DTO.Clientes
+﻿using Gremlins.WebApi.DTO.Response;
+using System;
+using System.Threading.Tasks;
+
+namespace Gremlins.WebApi.DTO.Clientes
 {
     public class ClientesDto
     {
@@ -9,5 +13,7 @@
         public string Direccion { get; set; }
         public decimal? Telefono { get; set; }
         public bool? Habilitado { get; set; }
+
+       
     }
 }
