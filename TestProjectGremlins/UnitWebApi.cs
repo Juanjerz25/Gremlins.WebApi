@@ -8,6 +8,7 @@ using Moq;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Numerics;
 
 namespace TestProjectGremlins
 {
@@ -25,14 +26,15 @@ namespace TestProjectGremlins
         }
         
         [TestMethod]
-        public void TestServicioWebClientes()
+        public void TestServicioWebClientesById()
         {
             // Crear una instancia del objeto Mock para la interfaz de aplicación
             var mockApp = new Mock<IClientesApplication>();
             int id_cliente = 2;
+             
 
             // Configurar el método GetClientById de la interfaz de aplicación para devolver un cliente de prueba
-            var client = new ClientesDto { IdCliente = 1, NombreCompleto = "John", TipoDocumento = "CC", Telefono = 31647 };
+            var client = new ClientesDto { IdCliente = 1, NombreCompleto = "John", TipoDocumento = "CC", Telefono = 3165741984 };
             mockApp.Setup(m => m.GetClientesForDocument(id_cliente)).Returns(new ResponseQuery<ClientesDto> { Result = client });
 
             // Crear una instancia del controlador del servicio web y pasarle la interfaz de aplicación como parámetro
@@ -46,9 +48,11 @@ namespace TestProjectGremlins
             Assert.IsInstanceOfType(result, typeof(ClientesDto));
 
             // Verificar que los valores devueltos son correctos
-            //var response = (ClientesDto)result;
+            var response = (ClientesDto)result;
             Assert.AreEqual(result.IdCliente, client.IdCliente);
             Assert.AreEqual(result.NombreCompleto, client.NombreCompleto);
+            Assert.AreEqual(result.TipoDocumento, client.TipoDocumento);
+            Assert.AreEqual(result.Telefono, client.Telefono);
         }
     }
 }
