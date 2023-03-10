@@ -1,14 +1,10 @@
 using Gremlins.WebApi.Application.Contracts;
 using Gremlins.WebApi.Controllers;
-using Gremlins.WebApi.DataAccess.Repositories.Contracts;
 using Gremlins.WebApi.DTO.Clientes;
 using Gremlins.WebApi.DTO.Response;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using System.Collections.Generic;
 using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Numerics;
 
 namespace TestProjectGremlins
 {
@@ -31,9 +27,9 @@ namespace TestProjectGremlins
             // Crear una instancia del objeto Mock para la interfaz de aplicación
             var mockApp = new Mock<IClientesApplication>();
             int id_cliente = 2;
-             
 
-            // Configurar el método GetClientById de la interfaz de aplicación para devolver un cliente de prueba
+
+            // Configurar el método GetClientesForDocument de la interfaz de aplicación para devolver un cliente de prueba
             var client = new ClientesDto { IdCliente = 1, NombreCompleto = "John", TipoDocumento = "CC", Telefono = 3165741984 };
             mockApp.Setup(m => m.GetClientesForDocument(id_cliente)).Returns(new ResponseQuery<ClientesDto> { Result = client });
 
