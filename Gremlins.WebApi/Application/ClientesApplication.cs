@@ -53,6 +53,7 @@ namespace Gremlins.WebApi.Application
 
 
                 var clienteDto = mapper.Map<ClientesDto>(clientesList);
+                response.Successful = clienteDto == null ? false : true;
                 response.Result = clienteDto;
 
             }
@@ -69,10 +70,11 @@ namespace Gremlins.WebApi.Application
             ResponseQuery<ClientesDto> response = new ResponseQuery<ClientesDto>();
             try
             {
-                //var clientesList = _clientesRepository.Find(c => c.NumeroDocumento == Documento.ToString());
-                var clienteUpdate= mapper.Map<Clientes>(clientesDtoUpdate);
-                 _clientesRepository.Update(clienteUpdate);
-                
+               
+               
+                var clienteUpdate = mapper.Map<Clientes>(clientesDtoUpdate);
+                _clientesRepository.Update(clienteUpdate);
+
                 response.Result = clientesDtoUpdate;
 
             }

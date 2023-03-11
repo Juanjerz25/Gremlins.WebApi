@@ -1,5 +1,6 @@
 ﻿using Gremlins.WebApi.DTO.Response;
 using System;
+using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
 
 namespace Gremlins.WebApi.DTO.Clientes
@@ -9,6 +10,7 @@ namespace Gremlins.WebApi.DTO.Clientes
         public int IdCliente { get; set; }
         public string TipoDocumento { get; set; }
         public string NumeroDocumento { get; set; }
+        //[Required]
         public string NombreCompleto { get; set; }
         public string Direccion { get; set; }
         public decimal? Telefono { get; set; }

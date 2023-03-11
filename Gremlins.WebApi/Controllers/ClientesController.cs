@@ -56,12 +56,22 @@ namespace Gremlins.WebApi.Controllers
         /// <param name="clienteActualizado"></param>
         /// <returns></returns>
         [HttpPut("")]
-        public async Task<ResponseQuery<ClientesDto>> ActualizarProducto( [FromBody] ClientesDto clienteActualizado)
+        //[Route(nameof(ClientesController.ActualizarClientes))]
+        public async Task<ResponseQuery<ClientesDto>> ActualizarClientes([FromBody] ClientesDto clienteActualizado)
         {
+            if (!ModelState.IsValid)
+            {
+                return new ResponseQuery<ClientesDto> { ErrorMessage = "", Successful = false, Message = "valide los campos vacios" };
+            }
+            if (!TryValidateModel(clienteActualizado))
+            {
+                return new ResponseQuery<ClientesDto> { ErrorMessage = "", Successful=false, Message="valide los campos vacios" };
+            }
             return await Task.Run(() =>
             {
                 return _clientesApplication.UpdateCliente(clienteActualizado);
             });
+
         }
         #endregion
 
