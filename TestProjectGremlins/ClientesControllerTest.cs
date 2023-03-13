@@ -17,7 +17,7 @@ namespace TestProjectGremlins
         private readonly HttpClient client = new HttpClient();
 
         /// <summary>
-        /// Prueba unitaria de Consulta de clientes con resultado : OK
+        /// Prueba unitaria de Consulta de clientes por Id con resultado : OK
         /// </summary>
         [TestMethod]
         public void TestGetClientesByIdResultOK()
@@ -47,6 +47,9 @@ namespace TestProjectGremlins
             Assert.AreEqual(result.TipoDocumento, client.TipoDocumento);
             Assert.AreEqual(result.Telefono, client.Telefono);
         }
+        /// <summary>
+        /// Prueba unitaria de Consulta de clientes con resultado : OK
+        /// </summary>
         [TestMethod]
         public void TestGetClientesAllResultOK()
         {
@@ -73,7 +76,9 @@ namespace TestProjectGremlins
             Assert.AreEqual(true, result.Successful);
 
         }
-
+        /// <summary>
+        ///  Prueba unitaria de Actualizacion  de clientes con resultado : Fallido
+        /// </summary>
         [TestMethod]
         public void PutClientes_Retorna_UnSuccesfull_al_pasar_un_objeto_invalido()
         {
